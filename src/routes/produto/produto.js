@@ -11,7 +11,7 @@ const Produto = () =>{
             teste de produtos
           </li>
           <li>
-            <Link to="/home">Voltar a home</Link>
+            <Link to="/">Voltar a home</Link>
           </li>
         </ul>
       </nav>
