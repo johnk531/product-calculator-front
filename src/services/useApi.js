@@ -16,4 +16,11 @@ api.interceptors.request.use(
   }
 );
 
-export default api;
+const useApi = () => ({
+  signin: async (email, password) => {
+      const response = await api.post('/user/signin', { email, password });
+      return response.data;
+  }
+})
+
+export default useApi;
