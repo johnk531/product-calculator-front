@@ -32,7 +32,7 @@ const Produto = () =>{
           {produtos.length > 0 ?
                 <>
                     {produtos.map((produto) => (
-                        <li key={produto._id}>{produto.nome}</li>
+                        <li key={produto._id}><Link to={"/produto/read/" + produto._id}>{produto.nome}</Link></li>
                     ))}
                 </>
                 :
