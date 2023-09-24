@@ -7,6 +7,7 @@ import Login from './routes/login/login';
 import Produto from './routes/produto/produto';
 import CreateProduto from "./routes/produto/createProduto";
 import ReadProduto from "./routes/produto/readProduto";
+import UpdateProduto from "./routes/produto/updateProduto";
 import Receita from './routes/receita/receita';
 import ListaUsuarios from "./routes/usuario/lista";
 
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="produto" element={<Produto />} />
           <Route path="produto/create" element={<CreateProduto />} />
           <Route path="produto/read/:_id" element={<ReadProduto />} />
+          <Route path="produto/update/:_id" element={<UpdateProduto />} />
           <Route path="receita" element={<Receita />} />
           <Route path="usuario/lista" element={<ListaUsuarios />} />
         </Routes>

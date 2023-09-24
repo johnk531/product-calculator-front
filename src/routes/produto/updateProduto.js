@@ -1,24 +1,39 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import useApi from "../../services/useApi";
 
 const UpdateProduto = () =>{
-  const api = useApi();
+  const api = useApi(),
+        { _id } = useParams();
 
-  const [_id, setId] = useState("64ed40cf12696b6b85cc18bb"),
-        [nome, setNome] = useState(""),
+  const [nome, setNome] = useState(""),
         [marca, setMarca] = useState(""),
         [quantidade, setQuantidade] = useState(""),
         [tipoquantidade, setTipoquantidade] = useState(""),
         [valor, setValor] = useState(""),
-        [_id_user, setIdUser] = useState("64ebd47f7060b4333aad3816");
+        [_id_user, setIdUser] = useState("");
+
+  const buscaProduto = async () => {    
+    try {
+        const res = await api.readProduct(_id);
+        setNome(res.nome);
+        setMarca(res.marca);
+        setQuantidade(res.quantidade);
+        setTipoquantidade(res.tipoquantidade);
+        setValor(res.valor);
+        setIdUser(res._id_user);
+    } catch (error) {
+        console.log("Ocorreu um erro no servidor!");
+        setProduto(null);
+    }
+  }
 
   const handleUpdadeProdutos = async (event) => {    
     event.preventDefault();
     if (nome && marca && quantidade && tipoquantidade && valor && _id_user) {
       try {
-        const res = await api.createProduct(nome, marca, quantidade, tipoquantidade, valor, _id_user);
+        const res = await api.updateProduct(_id, nome, marca, quantidade, tipoquantidade, valor, _id_user);
         console.log(res);
       } catch (error) {
         console.log("Ocorreu um erro no servidor!");
@@ -27,6 +42,10 @@ const UpdateProduto = () =>{
         console.log("Todos os campos são obrigatórios!");
     }  
   }
+
+  useEffect(() => {
+    buscaProduto();
+  }, [])
 
   return (
     <div>
@@ -64,7 +83,7 @@ const UpdateProduto = () =>{
           Valor:
           <input type="text" name="valor" value={valor} onChange={e => setValor(e.target.value)} />
         </label>
-        <input type="hidden" name="_id" value={_id} onChange={e => setValor(e.target.value)} />
+        <input type="hidden" name="_id" value={_id} />
         <br />
         <input type="submit" value="Entrar" />
       </form>
