@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 
 import useApi from "../../services/useApi";
 
-const CreateProduto = () =>{
+const UpdateProduto = () =>{
   const api = useApi();
 
-  const [nome, setNome] = useState(""),
+  const [_id, setId] = useState("64ed40cf12696b6b85cc18bb"),
+        [nome, setNome] = useState(""),
         [marca, setMarca] = useState(""),
         [quantidade, setQuantidade] = useState(""),
         [tipoquantidade, setTipoquantidade] = useState(""),
         [valor, setValor] = useState(""),
         [_id_user, setIdUser] = useState("64ebd47f7060b4333aad3816");
 
-  const handleCreateProdutos = async (event) => {    
+  const handleUpdadeProdutos = async (event) => {    
     event.preventDefault();
     if (nome && marca && quantidade && tipoquantidade && valor && _id_user) {
       try {
@@ -38,7 +39,7 @@ const CreateProduto = () =>{
         </ul>
       </nav>
       <div>
-      <form onSubmit={handleCreateProdutos}>
+      <form onSubmit={handleUpdadeProdutos}>
         <label>
           Nome:
           <input type="text" name="nome" value={nome} onChange={e => setNome(e.target.value)} />
@@ -63,6 +64,7 @@ const CreateProduto = () =>{
           Valor:
           <input type="text" name="valor" value={valor} onChange={e => setValor(e.target.value)} />
         </label>
+        <input type="hidden" name="_id" value={_id} onChange={e => setValor(e.target.value)} />
         <br />
         <input type="submit" value="Entrar" />
       </form>
@@ -71,4 +73,4 @@ const CreateProduto = () =>{
   );
 }
 
-export default CreateProduto;
+export default UpdateProduto;
