@@ -40,7 +40,7 @@ const ReadProduto = () =>{
                     <li key={produto.tipoquantidade}>{produto.tipoquantidade}</li>
                     <li key={produto.valor}>{produto.valor}</li>
                     <li key={produto._id_user}>{produto._id_user}</li>
-                    <Link to="#">Apagar</Link>
+                    <Link to={"/produto/delete/" + produto._id}>Apagar</Link>
                     <Link to={"/produto/update/" + produto._id}>Editar</Link>
                 </>
                 :
