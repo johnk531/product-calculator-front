@@ -1,7 +1,7 @@
 # product-calculator-front
 Products and services calculator - front-end
 
-# run the command to iniciate aplication
+# run the commands to iniciate aplication
 
 npm install
 npm start
