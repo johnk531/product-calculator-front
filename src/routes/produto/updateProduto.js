@@ -25,7 +25,6 @@ const UpdateProduto = () =>{
         setIdUser(res._id_user);
     } catch (error) {
         console.log("Ocorreu um erro no servidor!");
-        setProduto(null);
     }
   }
 
