@@ -62,6 +62,11 @@ const useApi = () => ({
   listProduct: async () => {
     const response = await api.get(`/product/list`);
     return response.data;
+  },
+  //receita
+  listRecipe: async () => {
+    const response = await api.get(`/recipe/list`);
+    return response.data;
   }
 })
 
