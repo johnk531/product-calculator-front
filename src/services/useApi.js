@@ -67,6 +67,10 @@ const useApi = () => ({
   listRecipe: async () => {
     const response = await api.get(`/recipe/list`);
     return response.data;
+  },
+  readRecipe: async (_id) => {
+    const response = await api.get(`/recipe/read/${_id}`);
+    return response.data;
   }
 })
 
