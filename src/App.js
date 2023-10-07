@@ -10,7 +10,7 @@ import ReadProduto from "./routes/produto/readProduto";
 import UpdateProduto from "./routes/produto/updateProduto";
 import Receita from './routes/receita/receita';
 import ReadReceita from "./routes/receita/readReceita";
-import ListaUsuarios from "./routes/usuario/lista";
+import Usuario from "./routes/usuario/lista/usuario";
 
 export default function App() {
   return (
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="produto/update/:_id" element={<UpdateProduto />} />
           <Route path="receita" element={<Receita />} />
           <Route path="receita/read/:_id" element={<ReadReceita />} />
-          <Route path="usuario/lista" element={<ListaUsuarios />} />
+          <Route path="usuario/lista" element={<Usuario />} />
         </Routes>
       </BrowserRouter>
     </div>
