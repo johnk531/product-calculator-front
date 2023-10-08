@@ -10,7 +10,7 @@ import ReadProduto from "./routes/produto/readProduto";
 import UpdateProduto from "./routes/produto/updateProduto";
 import Receita from './routes/receita/receita';
 import ReadReceita from "./routes/receita/readReceita";
-import Usuario from "./routes/usuario/lista/usuario";
+import Usuario from "./routes/usuario/usuario";
 
 export default function App() {
   return (
