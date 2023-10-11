@@ -64,14 +64,18 @@ const useApi = () => ({
     return response.data;
   },
   //receita
-  listRecipe: async () => {
-    const response = await api.get(`/recipe/list`);
+  createRecipe: async (nome, products, valor, _id_user) => {
+    const response = await api.post(`/product/create`, { nome, products, valor, _id_user });
     return response.data;
   },
   readRecipe: async (_id) => {
     const response = await api.get(`/recipe/read/${_id}`);
     return response.data;
-  }
+  },
+  listRecipe: async () => {
+    const response = await api.get(`/recipe/list`);
+    return response.data;
+  },
 })
 
 export default useApi;
