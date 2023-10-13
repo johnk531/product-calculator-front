@@ -72,6 +72,14 @@ const useApi = () => ({
     const response = await api.get(`/recipe/read/${_id}`);
     return response.data;
   },
+  updateRecipe: async (_id, nome, products, valor, _id_user) => {
+    const response = await api.put(`/recipe/update`, { _id, nome, products, valor, _id_user });
+    return response.data;
+  },
+  deleteRecipe: async (_id) => {
+    const response = await api.delete(`/recipe/delete`, { _id });
+    return response.data;
+  },
   listRecipe: async () => {
     const response = await api.get(`/recipe/list`);
     return response.data;
