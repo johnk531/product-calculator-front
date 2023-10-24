@@ -11,6 +11,7 @@ import UpdateProduto from "./routes/produto/updateProduto";
 import Receita from './routes/receita/receita';
 import CreateReceita from "./routes/receita/createReceita";
 import ReadReceita from "./routes/receita/readReceita";
+import UpdateReceita from "./routes/receita/updateReceita";
 import Usuario from "./routes/usuario/usuario";
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="receita" element={<Receita />} />
           <Route path="receita/create" element={<CreateReceita />} />
           <Route path="receita/read/:_id" element={<ReadReceita />} />
+          <Route path="receita/update/:_id" element={<UpdateReceita />} />
           <Route path="usuario/lista" element={<Usuario />} />
         </Routes>
       </BrowserRouter>
