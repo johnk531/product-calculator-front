@@ -6,3 +6,7 @@ Products and services calculator - front-end
 npm install
 
 npm start
+
+# .env
+
+exemplo .env
