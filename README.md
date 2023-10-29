@@ -9,4 +9,8 @@ npm start
 
 # .env
 
-exemplo .env
+environment variables to your .env
+
+`REACT_APP_HOST`
+
+`REACT_APP_TOKEN`
