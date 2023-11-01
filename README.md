@@ -11,6 +11,7 @@ Install dependencies
 Start the aplication
 ```bash
   npm start
+```
 
 # .env
 
