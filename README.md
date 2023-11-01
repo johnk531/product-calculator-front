@@ -3,9 +3,14 @@ Products and services calculator - front-end
 
 # run the commands to iniciate aplication
 
-npm install
+Install dependencies
+```bash
+  npm install
+```
 
-npm start
+Start the aplication
+```bash
+  npm start
 
 # .env
 
