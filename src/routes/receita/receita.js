@@ -27,15 +27,12 @@ const Receita = () =>{
       <nav>
         <ul>
           <li>
-            teste de receitas
-          </li>
-          <li>
             <Link to="/">Voltar a home</Link>
           </li>
           {receitas.length > 0 ?
                 <>
                     {receitas.map((receita) => (
-                        <li key={receita._id}><Link to={"/receita/read/" + receita._id}>{receitas.nome}</Link></li>
+                        <li key={receita._id}><Link to={"/receita/read/" + receita._id}>{receita.nome}</Link></li>
                     ))}
                 </>
                 :
