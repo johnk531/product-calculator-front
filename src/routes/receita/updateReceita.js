@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import useApi from "../../services/useApi";
@@ -23,8 +23,23 @@ const UpdateReceita = () =>{
       }
     } else {
         console.log("Todos os campos são obrigatórios!");
-    }  
+    }
   }
+    
+  const buscaReceita = async () => {    
+    try {
+        const res = await api.readRecipe(_id);
+        setNome(res.nome);
+        setValor(res.valor);
+        console.log(res);
+    } catch (error) {
+        console.log("Ocorreu um erro no servidor!");
+    }
+  }
+
+  useEffect(() => {
+    buscaReceita();
+  }, [])
 
   return (
     <div>
