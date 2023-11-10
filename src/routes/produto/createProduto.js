@@ -64,7 +64,7 @@ const CreateProduto = () =>{
           <input type="text" name="valor" value={valor} onChange={e => setValor(e.target.value)} />
         </label>
         <br />
-        <input type="submit" value="Entrar" />
+        <input type="submit" value="Cadastrar" />
       </form>
       </div>
     </div>
