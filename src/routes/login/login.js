@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+//services
 import useApi from "../../services/useApi";
+
+//components
+import { StyledButton } from '../../components/Button.style';
 
 const Login = () =>{
   const api = useApi();
@@ -16,7 +20,7 @@ const Login = () =>{
         const res = await api.signin(email,password);
         console.log(res);
       } catch (error) {
-        console.log("Ocorreu um erro no servidor!");
+        console.log("Ocorreu um erro no servidor!", error);
       }
     } else {
         console.log("email ou senha não preenchidos!");
@@ -48,7 +52,7 @@ const Login = () =>{
           <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
         </label>
         <br />
-        <input type="submit" value="Entrar" />
+        <StyledButton>Entrar</StyledButton>
       </form>
       </div>
     </div>
