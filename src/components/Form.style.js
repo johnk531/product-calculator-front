@@ -8,12 +8,13 @@ export const Form = styled.div`
     }
 
     input {
-        width: calc(100% - 20px);
+        width: 100%;
         max-width: 500px;
         margin-top: 5px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        font-size: 12pt;
     }
 
     label {
