@@ -6,6 +6,8 @@ import useApi from '../../services/useApi';
 //components
 import { Logo } from '../../components/Logo.style';
 import { StyledButton } from '../../components/Button.style';
+import { Container } from '../../components/Container.style';
+import { Form } from '../../components/Form.style';
 
 //assets
 import logo from '../../assets/img/logo-pc.png';
@@ -31,20 +33,26 @@ const Login = () =>{
   }
 
   return (
-    <div>
+    <Container>
       <Logo><img src={logo} alt='Logo Product Calculator'/></Logo>
-      <div>
+      <Form>
         <form onSubmit={handleLogin}>
-          <label for='email'>E-mail:</label>        
-          <input type='text' name='email' id='email' value={email} onChange={e => setEmail(e.target.value)} />
-          <br />
-          <label for='password'>Senha:</label>        
-          <input type='password' name='password' id='password' value={password} onChange={e => setPassword(e.target.value)} />
-          <br />
+          <div>
+            <label>
+              Email:     
+              <input type='text' name='email' id='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Set a email' />
+            </label>
+          </div>
+          <div>
+            <label>
+              Password:    
+              <input type='password' name='password' id='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='Set a password' />
+            </label>
+          </div>
           <StyledButton>Entrar</StyledButton>
         </form>
-      </div>
-    </div>
+      </Form>
+    </Container>
   );
 }
 
