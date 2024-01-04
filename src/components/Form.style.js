@@ -3,22 +3,61 @@ import styled from "styled-components";
 export const Form = styled.div`
     width: 100%;
 
-    div + div, button {
-        margin-top: 15px;
+    form {
+
+        div {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        div + div, button {
+            margin-top: 15px;
+        }
+
+        input {
+            font-size: 12pt;
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus-visible{ outline: 1px solid #31afb4; }
+
+        label {
+            color: #555;
+            font-size: 12pt;
+            display: flex;
+            flex-direction: column;
+        }
+
     }
 
-    input {
-        width: 100%;
-        max-width: 500px;
-        margin-top: 5px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 12pt;
+    &>div {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        div {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                color: #31afb4;
+                font-weight: 500;
+                text-decoration: none;
+            }
+        }
     }
 
-    label {
-        color: #555;
-        font-size: 12pt;
+    @media (min-width: 550px) {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 `;
