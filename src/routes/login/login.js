@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //services
 import useApi from '../../services/useApi';
@@ -49,8 +50,14 @@ const Login = () =>{
               <input type='password' name='password' id='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='Set a password' required />
             </label>
           </div>
-          <StyledButton>Entrar</StyledButton>
+          <StyledButton>Signin</StyledButton>
         </form>
+        <div>
+          <div>          
+            <Link to='/forget-password'>Forget Password</Link>
+            <Link to='/signup'>Signup</Link>
+          </div>
+        </div>
       </Form>
     </Container>
   );
