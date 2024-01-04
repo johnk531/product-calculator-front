@@ -40,13 +40,13 @@ const Login = () =>{
           <div>
             <label>
               Email:     
-              <input type='text' name='email' id='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Set a email' />
+              <input type='text' name='email' id='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Set a email' required />
             </label>
           </div>
           <div>
             <label>
               Password:    
-              <input type='password' name='password' id='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='Set a password' />
+              <input type='password' name='password' id='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='Set a password' required />
             </label>
           </div>
           <StyledButton>Entrar</StyledButton>

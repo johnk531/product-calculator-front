@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const Form = styled.div`
     width: 100%;
 
+    div {
+        width: 100%;
+        max-width: 500px;
+    }
+
     div + div, button {
         margin-top: 15px;
     }
 
     input {
-        width: 100%;
-        max-width: 500px;
         margin-top: 5px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -20,5 +23,16 @@ export const Form = styled.div`
     label {
         color: #555;
         font-size: 12pt;
+        display: flex;
+        flex-direction: column;
     }
+
+    @media (min-width: 550px) {
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }        
 `;
