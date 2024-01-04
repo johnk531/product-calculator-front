@@ -13,11 +13,11 @@ export const Form = styled.div`
     }
 
     input {
+        font-size: 12pt;
         margin-top: 5px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        font-size: 12pt;
     }
 
     label {
@@ -30,8 +30,8 @@ export const Form = styled.div`
     @media (min-width: 550px) {
         form {
             display: flex;
-            justify-content: center;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
     }        
