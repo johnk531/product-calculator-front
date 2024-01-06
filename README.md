@@ -23,4 +23,4 @@ environment variables to your .env
 
 ## Stack
 
-**Front-end:** React
+**Front-end:** React, StyleComponents
