@@ -17,19 +17,20 @@ const Login = () =>{
   const api = useApi();
 
   const [email, setEmail] = useState(''),
-        [password, setPassword] = useState('');
+        [password, setPassword] = useState(''),
+        [message, setMessage] = useState('');
 
   const handleLogin = async (e) => {
     e.preventDefault();
     if (email && password) {
       try {
         const res = await api.signin(email,password);
-        console.log(res);
+        setMessage(res);
       } catch (error) {
-        console.log('Ocorreu um erro no servidor!', error);
+        setMessage('Ocorreu um erro no servidor!');
       }
     } else {
-        console.log('email ou senha não preenchidos!');
+      setMessage('email ou senha não preenchidos!');
     }
   }
 
@@ -52,6 +53,7 @@ const Login = () =>{
           </div>
           <StyledButton>Signin</StyledButton>
         </form>
+        <p>{message}</p>
         <div>
           <div>          
             <Link to='/forget-password'>Forget Password</Link>

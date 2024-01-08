@@ -52,6 +52,12 @@ export const Form = styled.div`
         }
     }
 
+    p {
+        color: #c21700;
+        text-align: center;
+        margin-top: 10px;
+    }
+
     @media (min-width: 550px) {
         form {
             display: flex;
