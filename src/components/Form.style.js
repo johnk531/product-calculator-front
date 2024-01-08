@@ -65,5 +65,5 @@ export const Form = styled.div`
             justify-content: center;
             align-items: center;
         }
-    }        
+    }
 `;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 //services
 import useApi from '../../services/useApi';
@@ -41,7 +40,7 @@ const Login = () =>{
         <form onSubmit={handleLogin}>
           <div>
             <label>
-              Email:     
+              Email:
               <input type='text' name='email' id='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Set a email' required />
             </label>
           </div>
